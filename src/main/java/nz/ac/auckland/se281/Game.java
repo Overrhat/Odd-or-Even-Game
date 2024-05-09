@@ -61,6 +61,9 @@ public class Game {
         continue;
       }
     }
+
+    // Printing Player <name>: fingers: <a> After receiving the valid input
+    MessageCli.PRINT_INFO_HAND.printMessage(this.options[0], input);
   }
 
   public void endGame() {}
