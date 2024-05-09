@@ -9,11 +9,13 @@ public class Game {
   private Difficulty difficulty;
   private Choice choice;
   private int round;
+  String[] options;
 
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
     this.difficulty = difficulty;
     this.choice = choice;
     this.round = 1;
+    this.options = options;
 
     // the first element of options[0]; is the name of the player
     MessageCli.WELCOME_PLAYER.printMessage(options[0]);
