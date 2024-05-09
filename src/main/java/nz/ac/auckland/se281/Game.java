@@ -9,7 +9,7 @@ public class Game {
   private Difficulty difficulty;
   private Choice choice;
   private int round;
-  String[] options;
+  private String[] options;
 
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
     this.difficulty = difficulty;
@@ -18,7 +18,7 @@ public class Game {
     this.options = options;
 
     // the first element of options[0]; is the name of the player
-    MessageCli.WELCOME_PLAYER.printMessage(options[0]);
+    MessageCli.WELCOME_PLAYER.printMessage(this.options[0]);
   }
 
   public void play() {
@@ -26,7 +26,22 @@ public class Game {
     MessageCli.START_ROUND.printMessage(Integer.toString(round));
 
     // Add 1 to the round for the next round
-    round += 1;
+    round++;
+
+    // scanning the input finger
+    Boolean inputValid = false;
+    String input = null;
+    int inputNumber;
+
+    while (inputValid == false) {
+      // printing the input message
+      MessageCli.ASK_INPUT.printMessage();
+
+      // scanning the input
+      input = Utils.scanner.nextLine();
+
+      inputValid = true;
+    }
   }
 
   public void endGame() {}
