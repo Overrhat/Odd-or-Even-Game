@@ -46,7 +46,20 @@ public class Game {
         continue;
       }
 
-      inputValid = true;
+      // Checking the number is between 0 and 5 (inclusive)
+      try {
+        inputNumber = Integer.parseInt(input);
+        if (inputNumber < 6 && inputNumber > -1) {
+          inputValid = true;
+          break;
+        } else {
+          MessageCli.INVALID_INPUT.printMessage();
+          continue;
+        }
+      } catch (NumberFormatException e) {
+        MessageCli.INVALID_INPUT.printMessage();
+        continue;
+      }
     }
   }
 
