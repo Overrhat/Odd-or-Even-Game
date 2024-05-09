@@ -40,6 +40,12 @@ public class Game {
       // scanning the input
       input = Utils.scanner.nextLine();
 
+      // Checking the length of the input
+      if (input.length() != 1) {
+        MessageCli.INVALID_INPUT.printMessage();
+        continue;
+      }
+
       inputValid = true;
     }
   }
