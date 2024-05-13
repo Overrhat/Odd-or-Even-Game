@@ -64,6 +64,16 @@ public class Game {
 
     // Printing Player <name>: fingers: <a> After receiving the valid input
     MessageCli.PRINT_INFO_HAND.printMessage(this.options[0], input);
+
+    // Create the level of this game with using the LevelFactory
+    Level level = LevelFactory.createLevel(this.difficulty);
+
+    // Get the number that the AI HAL-9000 will use
+    int aiValue = level.getNum();
+    String aiValueString = Integer.toString(aiValue);
+
+    // Printing Player <name>: fingers: <a> for the AI
+    MessageCli.PRINT_INFO_HAND.printMessage("HAL-9000", aiValueString);
   }
 
   public void endGame() {}
