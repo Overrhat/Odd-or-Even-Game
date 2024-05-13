@@ -86,6 +86,7 @@ public class Game {
           break;
         } else {
           playerWins = false;
+          break;
         }
       case EVEN:
         if (Utils.isEven(sumNumber)) {
@@ -93,9 +94,26 @@ public class Game {
           break;
         } else {
           playerWins = false;
+          break;
         }
       default:
         break;
+    }
+
+    // print the outcome of this round
+    String sumString = Integer.toString(sumNumber);
+    String sumOddOrEven = null;
+
+    if (Utils.isOdd(sumNumber)) {
+      sumOddOrEven = "ODD";
+    } else {
+      sumOddOrEven = "EVEN";
+    }
+
+    if (playerWins) {
+      MessageCli.PRINT_OUTCOME_ROUND.printMessage(sumString, sumOddOrEven, this.options[0]);
+    } else {
+      MessageCli.PRINT_OUTCOME_ROUND.printMessage(sumString, sumOddOrEven, "HAL-9000");
     }
   }
 
