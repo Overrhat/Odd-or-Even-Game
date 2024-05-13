@@ -31,7 +31,7 @@ public class Game {
     // scanning the input finger
     Boolean inputValid = false;
     String input = null;
-    int inputNumber;
+    int inputNumber = 0;
 
     while (inputValid == false) {
       // printing the input message
@@ -74,6 +74,29 @@ public class Game {
 
     // Printing Player <name>: fingers: <a> for the AI
     MessageCli.PRINT_INFO_HAND.printMessage("HAL-9000", aiValueString);
+
+    // Determining the winner
+    Boolean playerWins = true;
+    int sumNumber = inputNumber + aiValue;
+
+    switch (this.choice) {
+      case ODD:
+        if (Utils.isOdd(sumNumber)) {
+          playerWins = true;
+          break;
+        } else {
+          playerWins = false;
+        }
+      case EVEN:
+        if (Utils.isEven(sumNumber)) {
+          playerWins = true;
+          break;
+        } else {
+          playerWins = false;
+        }
+      default:
+        break;
+    }
   }
 
   public void endGame() {}
