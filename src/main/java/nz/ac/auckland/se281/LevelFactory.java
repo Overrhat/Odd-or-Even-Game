@@ -9,7 +9,7 @@ public class LevelFactory {
       case EASY:
         return new EasyLevel(round);
       case MEDIUM:
-        return null;
+        return new MediumLevel(round);
       case HARD:
         return null;
       default:
