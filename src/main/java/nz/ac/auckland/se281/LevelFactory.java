@@ -4,10 +4,10 @@ import nz.ac.auckland.se281.Main.Difficulty;
 
 public class LevelFactory {
 
-  public static Level createLevel(Difficulty difficulty) {
+  public static Level createLevel(Difficulty difficulty, int round) {
     switch (difficulty) {
       case EASY:
-        return new EasyLevel();
+        return new EasyLevel(round);
       case MEDIUM:
         return null;
       case HARD:

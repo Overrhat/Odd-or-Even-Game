@@ -4,7 +4,7 @@ public class EasyLevel implements Level {
 
   private Strategy strategy;
 
-  public EasyLevel() {
+  public EasyLevel(int round) {
     this.strategy = new RandomStrategy();
   }
 
