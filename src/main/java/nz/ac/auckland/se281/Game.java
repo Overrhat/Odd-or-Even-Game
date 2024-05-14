@@ -1,5 +1,6 @@
 package nz.ac.auckland.se281;
 
+import java.util.ArrayList;
 import nz.ac.auckland.se281.Main.Choice;
 import nz.ac.auckland.se281.Main.Difficulty;
 
@@ -10,12 +11,14 @@ public class Game {
   private Choice choice;
   private int round;
   private String[] options;
+  public ArrayList<Integer> playerInputList;
 
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
     this.difficulty = difficulty;
     this.choice = choice;
     this.round = 0;
     this.options = options;
+    this.playerInputList = new ArrayList<Integer>();
 
     // the first element of options[0]; is the name of the player
     MessageCli.WELCOME_PLAYER.printMessage(this.options[0]);
@@ -61,6 +64,9 @@ public class Game {
         continue;
       }
     }
+
+    // Add the input value to the playerInputList
+    playerInputList.add(inputNumber);
 
     // Printing Player <name>: fingers: <a> After receiving the valid input
     MessageCli.PRINT_INFO_HAND.printMessage(this.options[0], input);
