@@ -14,7 +14,7 @@ public class Game {
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
     this.difficulty = difficulty;
     this.choice = choice;
-    this.round = 1;
+    this.round = 0;
     this.options = options;
 
     // the first element of options[0]; is the name of the player
@@ -22,11 +22,11 @@ public class Game {
   }
 
   public void play() {
-    // print the number of round
-    MessageCli.START_ROUND.printMessage(Integer.toString(round));
-
     // Add 1 to the round for the next round
     round++;
+
+    // print the number of round
+    MessageCli.START_ROUND.printMessage(Integer.toString(round));
 
     // scanning the input finger
     Boolean inputValid = false;
