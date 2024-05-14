@@ -25,6 +25,25 @@ public class TopStrategy implements Strategy {
       }
     }
 
-    return Utils.getRandomNumberRange(0, 5);
+    switch (choice) {
+      case ODD:
+        if (oddNum > evenNum) {
+          return Utils.getRandomOddNumber();
+        } else if (oddNum < evenNum) {
+          return Utils.getRandomEvenNumber();
+        } else {
+          return Utils.getRandomNumberRange(0, 5);
+        }
+      case EVEN:
+        if (oddNum > evenNum) {
+          return Utils.getRandomEvenNumber();
+        } else if (oddNum < evenNum) {
+          return Utils.getRandomOddNumber();
+        } else {
+          return Utils.getRandomNumberRange(0, 5);
+        }
+      default:
+        return Utils.getRandomNumberRange(0, 5);
+    }
   }
 }
