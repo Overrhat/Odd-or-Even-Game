@@ -8,7 +8,7 @@ public class TopStrategy implements Strategy {
   @Override
   public int selectNum(ArrayList<Integer> playerInputList, Choice choice) {
     // check if the playerInputList is empty
-    if (playerInputList.isEmpty() || playerInputList == null) {
+    if (playerInputList == null || playerInputList.isEmpty()) {
       return Utils.getRandomNumberRange(0, 5);
     }
 
@@ -18,7 +18,7 @@ public class TopStrategy implements Strategy {
     int evenNum = 0;
 
     for (int i = 0; i < sizeList; i++) {
-      if (Utils.isOdd(playerInputList.indexOf(i))) {
+      if (Utils.isOdd(playerInputList.get(i))) {
         oddNum++;
       } else {
         evenNum++;
