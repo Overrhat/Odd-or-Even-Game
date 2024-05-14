@@ -21,6 +21,14 @@ public class MediumLevel implements Level {
 
   @Override
   public int getNum() {
+    // Find which round this is
+    int numOfRound = this.playerInputList.size();
+
+    // Set to the TopStrategy if it's 4th or higher round
+    if (numOfRound >= 4) {
+      this.setStrategy(new TopStrategy());
+    }
+
     return this.strategy.selectNum(this.playerInputList, this.choice);
   }
 }
