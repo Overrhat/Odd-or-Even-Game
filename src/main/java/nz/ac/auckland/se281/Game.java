@@ -76,7 +76,13 @@ public class Game {
     MessageCli.PRINT_INFO_HAND.printMessage(this.options[0], input);
 
     // Create the level of this game with using the LevelFactory
-    Level level = LevelFactory.createLevel(this.difficulty, this.playerInputList, this.choice);
+    Level level =
+        LevelFactory.createLevel(
+            this.difficulty,
+            this.playerInputList,
+            this.choice,
+            this.strategiesList,
+            this.playerWinStats);
 
     // Get the number that the AI HAL-9000 will use
     int aiValue = level.getNum();

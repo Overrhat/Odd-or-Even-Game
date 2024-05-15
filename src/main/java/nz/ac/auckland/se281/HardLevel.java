@@ -7,11 +7,19 @@ public class HardLevel implements Level {
   private Strategy strategy;
   private ArrayList<Integer> playerInputList;
   private Choice choice;
+  private ArrayList<Strategy> strategiesList;
+  private ArrayList<Boolean> playerWinStats;
 
-  public HardLevel(ArrayList<Integer> playerInputList, Choice choice) {
+  public HardLevel(
+      ArrayList<Integer> playerInputList,
+      Choice choice,
+      ArrayList<Strategy> strategiesList,
+      ArrayList<Boolean> playerWinStats) {
     this.strategy = new RandomStrategy();
     this.playerInputList = playerInputList;
     this.choice = choice;
+    this.strategiesList = strategiesList;
+    this.playerWinStats = playerWinStats;
   }
 
   @Override
