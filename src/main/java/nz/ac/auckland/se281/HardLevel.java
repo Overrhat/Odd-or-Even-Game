@@ -31,4 +31,9 @@ public class HardLevel implements Level {
 
     return this.strategy.selectNum(this.playerInputList, this.choice);
   }
+
+  @Override
+  public Strategy getStrategy() {
+    return this.strategy;
+  }
 }

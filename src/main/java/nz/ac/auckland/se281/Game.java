@@ -11,7 +11,9 @@ public class Game {
   private Choice choice;
   private int round;
   private String[] options;
-  public ArrayList<Integer> playerInputList;
+  private ArrayList<Integer> playerInputList;
+  private ArrayList<Boolean> playerWinStats;
+  private ArrayList<Strategy> strategiesList;
 
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
     this.difficulty = difficulty;
@@ -19,6 +21,8 @@ public class Game {
     this.round = 0;
     this.options = options;
     this.playerInputList = new ArrayList<Integer>();
+    this.playerWinStats = new ArrayList<Boolean>();
+    this.strategiesList = new ArrayList<Strategy>();
 
     // the first element of options[0]; is the name of the player
     MessageCli.WELCOME_PLAYER.printMessage(this.options[0]);

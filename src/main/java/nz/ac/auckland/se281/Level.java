@@ -4,4 +4,6 @@ public interface Level {
   void setStrategy(Strategy strategy);
 
   int getNum();
+
+  Strategy getStrategy();
 }

@@ -24,4 +24,9 @@ public class EasyLevel implements Level {
   public int getNum() {
     return this.strategy.selectNum(this.playerInputList, this.choice);
   }
+
+  @Override
+  public Strategy getStrategy() {
+    return this.strategy;
+  }
 }
