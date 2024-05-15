@@ -90,7 +90,7 @@ public class Game {
 
     // Add the strategy to the strategy list
     Strategy roundStrategy = level.getStrategy();
-    strategiesList.add(roundStrategy);
+    this.strategiesList.add(roundStrategy);
 
     // Printing Player <name>: fingers: <a> for the AI
     MessageCli.PRINT_INFO_HAND.printMessage("HAL-9000", aiValueString);
@@ -120,6 +120,9 @@ public class Game {
         break;
     }
 
+    // add to win list
+    this.playerWinStats.add(playerWins);
+
     // print the outcome of this round
     String sumString = Integer.toString(sumNumber);
     String sumOddOrEven = null;
@@ -132,12 +135,8 @@ public class Game {
 
     if (playerWins) {
       MessageCli.PRINT_OUTCOME_ROUND.printMessage(sumString, sumOddOrEven, this.options[0]);
-      // add to win list
-      playerWinStats.add(true);
     } else {
       MessageCli.PRINT_OUTCOME_ROUND.printMessage(sumString, sumOddOrEven, "HAL-9000");
-      // add to win list
-      playerWinStats.add(false);
     }
   }
 

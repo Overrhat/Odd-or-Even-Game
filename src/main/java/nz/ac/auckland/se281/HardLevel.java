@@ -32,11 +32,28 @@ public class HardLevel implements Level {
     // Find which round this is
     int numOfRound = this.playerInputList.size();
 
-    // Set to the TopStrategy if it's 4th or higher round
-    if (numOfRound >= 4) {
-      this.setStrategy(new TopStrategy());
+    // Set to the RandomStrategy if it's lower than 4th round
+    if (numOfRound < 4) {
+      return this.strategy.selectNum(this.playerInputList, this.choice);
     }
 
+    // find the last strategy used
+    int sizeOfList = this.strategiesList.size();
+    Strategy lastStrategy = this.strategiesList.get(sizeOfList - 1);
+
+    // Determine if the player won or not for the last round
+    Boolean wonLast = this.playerWinStats.get((numOfRound - 2));
+
+    // Use the HardLevel Technique
+    if (!wonLast) {
+      this.setStrategy(lastStrategy);
+    } else {
+      if (lastStrategy instanceof TopStrategy) {
+        this.setStrategy(new RandomStrategy());
+      } else {
+        this.setStrategy(new TopStrategy());
+      }
+    }
     return this.strategy.selectNum(this.playerInputList, this.choice);
   }
 
