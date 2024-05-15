@@ -29,6 +29,12 @@ public class Game {
   }
 
   public void play() {
+    // Check if there was a game created
+    if (this.playerInputList == null) {
+      MessageCli.GAME_NOT_STARTED.printMessage();
+      return;
+    }
+
     // Add 1 to the round for the next round
     round++;
 
@@ -140,7 +146,19 @@ public class Game {
     }
   }
 
-  public void endGame() {}
+  public void endGame() {
+    // Check if there was a game created
+    if (this.playerInputList == null) {
+      MessageCli.GAME_NOT_STARTED.printMessage();
+      return;
+    }
+  }
 
-  public void showStats() {}
+  public void showStats() {
+    // Check if there was a game created
+    if (this.playerInputList == null) {
+      MessageCli.GAME_NOT_STARTED.printMessage();
+      return;
+    }
+  }
 }
