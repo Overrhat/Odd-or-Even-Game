@@ -82,6 +82,10 @@ public class Game {
     int aiValue = level.getNum();
     String aiValueString = Integer.toString(aiValue);
 
+    // Add the strategy to the strategy list
+    Strategy roundStrategy = level.getStrategy();
+    strategiesList.add(roundStrategy);
+
     // Printing Player <name>: fingers: <a> for the AI
     MessageCli.PRINT_INFO_HAND.printMessage("HAL-9000", aiValueString);
 
@@ -122,8 +126,12 @@ public class Game {
 
     if (playerWins) {
       MessageCli.PRINT_OUTCOME_ROUND.printMessage(sumString, sumOddOrEven, this.options[0]);
+      // add to win list
+      playerWinStats.add(true);
     } else {
       MessageCli.PRINT_OUTCOME_ROUND.printMessage(sumString, sumOddOrEven, "HAL-9000");
+      // add to win list
+      playerWinStats.add(false);
     }
   }
 
