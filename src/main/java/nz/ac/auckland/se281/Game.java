@@ -153,6 +153,29 @@ public class Game {
       return;
     }
 
+    // Count how many wins the player has
+    int wins = 0;
+    for (Boolean won : playerWinStats) {
+      if (won) {
+        wins++;
+      }
+    }
+
+    // Get how many wins ai has
+    int aiWins = this.round - wins;
+
+    // Show the final stats by using showStats method
+    this.showStats();
+
+    // Print the winner
+    if (wins > aiWins) {
+      MessageCli.PRINT_END_GAME.printMessage(options[0]);
+    } else if (wins < aiWins) {
+      MessageCli.PRINT_END_GAME.printMessage("HAL-9000");
+    } else {
+      MessageCli.PRINT_END_GAME_TIE.printMessage();
+    }
+
     // Setting to endGame (putting everything back to null)
     this.difficulty = null;
     this.choice = null;
