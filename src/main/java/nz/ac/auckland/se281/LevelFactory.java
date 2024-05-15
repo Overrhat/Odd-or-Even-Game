@@ -14,7 +14,7 @@ public class LevelFactory {
       case MEDIUM:
         return new MediumLevel(playerInputList, choice);
       case HARD:
-        return null;
+        return new HardLevel(playerInputList, choice);
       default:
         break;
     }
