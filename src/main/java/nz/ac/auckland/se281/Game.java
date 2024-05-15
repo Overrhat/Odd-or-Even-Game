@@ -152,6 +152,15 @@ public class Game {
       MessageCli.GAME_NOT_STARTED.printMessage();
       return;
     }
+
+    // Setting to endGame (putting everything back to null)
+    this.difficulty = null;
+    this.choice = null;
+    this.round = 0;
+    this.options = null;
+    this.playerInputList = null;
+    this.playerWinStats = null;
+    this.strategiesList = null;
   }
 
   public void showStats() {
