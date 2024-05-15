@@ -169,5 +169,23 @@ public class Game {
       MessageCli.GAME_NOT_STARTED.printMessage();
       return;
     }
+
+    // Count how many wins the player has
+    int wins = 0;
+    for (Boolean won : playerWinStats) {
+      if (won) {
+        wins++;
+      }
+    }
+
+    // Get how many wins ai has
+    int aiWins = this.round - wins;
+
+    // Print the stats
+    String winsString = Integer.toString(wins);
+    String aiWinsString = Integer.toString(aiWins);
+
+    MessageCli.PRINT_PLAYER_WINS.printMessage(options[0], winsString, aiWinsString);
+    MessageCli.PRINT_PLAYER_WINS.printMessage("HAL-9000", aiWinsString, winsString);
   }
 }
