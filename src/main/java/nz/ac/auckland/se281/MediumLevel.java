@@ -3,13 +3,17 @@ package nz.ac.auckland.se281;
 import java.util.ArrayList;
 import nz.ac.auckland.se281.Main.Choice;
 
+/**
+ * The class for the medium level that the user chose for the game which implements the Level
+ * interface.
+ */
 public class MediumLevel implements Level {
   private Strategy strategy;
   private ArrayList<Integer> playerInputList;
   private Choice choice;
 
   /**
-   * Constructor for MediumLevel
+   * Constructor for MediumLevel.
    *
    * @param playerInputList the List of players' inputs
    * @param choice choice the user chose
@@ -21,7 +25,7 @@ public class MediumLevel implements Level {
   }
 
   /**
-   * Inserts the strategy to set the strategy of the instance
+   * Inserts the strategy to set the strategy of the instance.
    *
    * @param strategy strategy to set into
    */
@@ -32,7 +36,7 @@ public class MediumLevel implements Level {
 
   /**
    * Gets the number that the bot will use by using RandomStrategy for the first 3 rounds of the
-   * game and using TopStrategy for rest of the game
+   * game and using TopStrategy for rest of the game.
    *
    * @return the number created with the level's strategy
    */
@@ -50,7 +54,7 @@ public class MediumLevel implements Level {
   }
 
   /**
-   * gets the strategy of the instance
+   * gets the strategy of the instance.
    *
    * @return the strategy of the instance
    */

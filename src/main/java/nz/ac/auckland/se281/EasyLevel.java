@@ -5,12 +5,17 @@ import nz.ac.auckland.se281.Main.Choice;
 
 public class EasyLevel implements Level {
 
+  /**
+   * The class for the easy level that the user chose for the game which implements the Level
+   * interface.
+   */
   private Strategy strategy;
+
   private ArrayList<Integer> playerInputList;
   private Choice choice;
 
   /**
-   * Constructor for EasyLevel
+   * Constructor for EasyLevel.
    *
    * @param playerInputList the List of players' inputs
    * @param choice choice the user chose
@@ -22,7 +27,7 @@ public class EasyLevel implements Level {
   }
 
   /**
-   * Inserts the strategy to set the strategy of the instance
+   * Inserts the strategy to set the strategy of the instance.
    *
    * @param strategy strategy to set into
    */
@@ -32,7 +37,7 @@ public class EasyLevel implements Level {
   }
 
   /**
-   * Gets the number that the bot will use by using RandomStrategy
+   * Gets the number that the bot will use by using RandomStrategy.
    *
    * @return the number created with the level's strategy
    */
@@ -42,7 +47,7 @@ public class EasyLevel implements Level {
   }
 
   /**
-   * gets the strategy of the instance
+   * gets the strategy of the instance.
    *
    * @return the strategy of the instance
    */

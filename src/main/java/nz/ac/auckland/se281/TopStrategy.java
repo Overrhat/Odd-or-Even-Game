@@ -3,6 +3,10 @@ package nz.ac.auckland.se281;
 import java.util.ArrayList;
 import nz.ac.auckland.se281.Main.Choice;
 
+/**
+ * The class for the TopStrategy which implements the Strategy interface. It will generate the bot's
+ * number with the strategy that is explained in selectNum javadoc.
+ */
 public class TopStrategy implements Strategy {
 
   /**

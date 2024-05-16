@@ -3,6 +3,10 @@ package nz.ac.auckland.se281;
 import java.util.ArrayList;
 import nz.ac.auckland.se281.Main.Choice;
 
+/**
+ * The class for the hard level that the user chose for the game which implements the Level
+ * interface.
+ */
 public class HardLevel implements Level {
   private Strategy strategy;
   private ArrayList<Integer> playerInputList;
@@ -11,7 +15,7 @@ public class HardLevel implements Level {
   private ArrayList<Boolean> playerWinStats;
 
   /**
-   * Constructor for HardLevel class
+   * Constructor for HardLevel class.
    *
    * @param playerInputList the List of players' inputs
    * @param choice choice the user chose
@@ -31,7 +35,7 @@ public class HardLevel implements Level {
   }
 
   /**
-   * Inserts the strategy to set the strategy of the instance
+   * Inserts the strategy to set the strategy of the instance.
    *
    * @param strategy strategy to set into
    */
@@ -43,7 +47,7 @@ public class HardLevel implements Level {
   /**
    * Gets the number that the bot will use by using RandomStrategy for the first 3 rounds and from
    * the 4th round, use the strategy from the round before if the bot won the round before. Use
-   * another if not
+   * another if not.
    *
    * @return the number created with the level's strategy
    */
@@ -78,7 +82,7 @@ public class HardLevel implements Level {
   }
 
   /**
-   * gets the strategy of the instance
+   * gets the strategy of the instance.
    *
    * @return the strategy of the instance
    */

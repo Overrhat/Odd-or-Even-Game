@@ -4,11 +4,15 @@ import java.util.ArrayList;
 import nz.ac.auckland.se281.Main.Choice;
 import nz.ac.auckland.se281.Main.Difficulty;
 
+/**
+ * A class follows the Factory Design pattern which will create a new constructor with a given
+ * parameters.
+ */
 public class LevelFactory {
 
   /**
    * Inserts difficulty, playerInputList, choice, strategiesList, and playerWinStats to create a new
-   * level
+   * level.
    *
    * @param difficulty difficulty the user chose
    * @param playerInputList the List of players' inputs
@@ -23,6 +27,8 @@ public class LevelFactory {
       Choice choice,
       ArrayList<Strategy> strategiesList,
       ArrayList<Boolean> playerWinStats) {
+
+    // Create a constructor with the inputed difficulty
     switch (difficulty) {
       case EASY:
         return new EasyLevel(playerInputList, choice);

@@ -3,9 +3,10 @@ package nz.ac.auckland.se281;
 import java.util.ArrayList;
 import nz.ac.auckland.se281.Main.Choice;
 
+/** An interface that follows Strategy Design pattern. */
 public interface Strategy {
   /**
-   * Selects the bot's number that will be used for the round
+   * Selects the bot's number that will be used for the round.
    *
    * @param playerInputList the List of players' inputs
    * @param choice choice the user chose

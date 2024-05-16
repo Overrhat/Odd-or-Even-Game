@@ -75,7 +75,6 @@ public class Game {
       try {
         inputNumber = Integer.parseInt(input);
         if (inputNumber < 6 && inputNumber > -1) {
-          inputValid = true;
           break;
         } else {
           MessageCli.INVALID_INPUT.printMessage();
@@ -143,7 +142,7 @@ public class Game {
 
     // print the outcome of this round
     String sumString = Integer.toString(sumNumber);
-    String sumOddOrEven = null;
+    String sumOddOrEven;
 
     if (Utils.isOdd(sumNumber)) {
       sumOddOrEven = "ODD";
