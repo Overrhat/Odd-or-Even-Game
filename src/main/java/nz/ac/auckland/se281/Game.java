@@ -15,6 +15,14 @@ public class Game {
   private ArrayList<Boolean> playerWinStats;
   private ArrayList<Strategy> strategiesList;
 
+  /**
+   * Inserts the specified difficulty, choice, options from the user, and creates a new instance of
+   * the Game class.
+   *
+   * @param difficulty difficulty that the user chose for the game
+   * @param choice choice of the user for the game
+   * @param options name of the user
+   */
   public void newGame(Difficulty difficulty, Choice choice, String[] options) {
     this.difficulty = difficulty;
     this.choice = choice;
@@ -28,6 +36,10 @@ public class Game {
     MessageCli.WELCOME_PLAYER.printMessage(this.options[0]);
   }
 
+  /**
+   * This method does not insert anything but when it is called, it starts the round of the game
+   * which will change some of the fields in the instance and print some messages about the game.
+   */
   public void play() {
     // Check if there was a game created
     if (this.playerInputList == null) {
@@ -146,6 +158,10 @@ public class Game {
     }
   }
 
+  /**
+   * This method does not insert anything but when it is called, it ends the round of the game which
+   * will reset the fields in the instance and print some messages about the game.
+   */
   public void endGame() {
     // Check if there was a game created
     if (this.playerInputList == null) {
@@ -186,6 +202,10 @@ public class Game {
     this.strategiesList = null;
   }
 
+  /**
+   * This method does not insert anything but when it is called, it shows the stats of the game
+   * which will print some messages about the game by using the instance.
+   */
   public void showStats() {
     // Check if there was a game created
     if (this.playerInputList == null) {

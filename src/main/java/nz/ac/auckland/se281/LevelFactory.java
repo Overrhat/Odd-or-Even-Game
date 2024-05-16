@@ -6,6 +6,17 @@ import nz.ac.auckland.se281.Main.Difficulty;
 
 public class LevelFactory {
 
+  /**
+   * Inserts difficulty, playerInputList, choice, strategiesList, and playerWinStats to create a new
+   * level
+   *
+   * @param difficulty difficulty the user chose
+   * @param playerInputList the List of players' inputs
+   * @param choice choice the user chose
+   * @param strategiesList the List of the strategies used
+   * @param playerWinStats the List of the players' win stats
+   * @return new EasyLevel, MediumLevel or HardLevel instance created
+   */
   public static Level createLevel(
       Difficulty difficulty,
       ArrayList<Integer> playerInputList,

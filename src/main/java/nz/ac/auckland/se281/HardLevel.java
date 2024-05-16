@@ -10,6 +10,14 @@ public class HardLevel implements Level {
   private ArrayList<Strategy> strategiesList;
   private ArrayList<Boolean> playerWinStats;
 
+  /**
+   * Constructor for HardLevel class
+   *
+   * @param playerInputList the List of players' inputs
+   * @param choice choice the user chose
+   * @param strategiesList the List of the strategies used
+   * @param playerWinStats the List of the players' win stats
+   */
   public HardLevel(
       ArrayList<Integer> playerInputList,
       Choice choice,
@@ -22,11 +30,23 @@ public class HardLevel implements Level {
     this.playerWinStats = playerWinStats;
   }
 
+  /**
+   * Inserts the strategy to set the strategy of the instance
+   *
+   * @param strategy strategy to set into
+   */
   @Override
   public void setStrategy(Strategy strategy) {
     this.strategy = strategy;
   }
 
+  /**
+   * Gets the number that the bot will use by using RandomStrategy for the first 3 rounds and from
+   * the 4th round, use the strategy from the round before if the bot won the round before. Use
+   * another if not
+   *
+   * @return the number created with the level's strategy
+   */
   @Override
   public int getNum() {
     // Find which round this is
@@ -57,6 +77,11 @@ public class HardLevel implements Level {
     return this.strategy.selectNum(this.playerInputList, this.choice);
   }
 
+  /**
+   * gets the strategy of the instance
+   *
+   * @return the strategy of the instance
+   */
   @Override
   public Strategy getStrategy() {
     return this.strategy;

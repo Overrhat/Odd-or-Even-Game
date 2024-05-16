@@ -5,6 +5,10 @@ import nz.ac.auckland.se281.Main.Choice;
 
 public class TopStrategy implements Strategy {
 
+  /**
+   * Selects the bot's number that will be used for the round by following the TopStrategy which is
+   * assuming the user to input with the predominantly selected choice so wining with that.
+   */
   @Override
   public int selectNum(ArrayList<Integer> playerInputList, Choice choice) {
     // check if the playerInputList is empty
