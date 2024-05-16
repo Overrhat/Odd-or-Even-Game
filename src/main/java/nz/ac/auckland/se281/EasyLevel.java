@@ -3,14 +3,13 @@ package nz.ac.auckland.se281;
 import java.util.ArrayList;
 import nz.ac.auckland.se281.Main.Choice;
 
+/**
+ * The class for the easy level that the user chose for the game which implements the Level
+ * interface.
+ */
 public class EasyLevel implements Level {
 
-  /**
-   * The class for the easy level that the user chose for the game which implements the Level
-   * interface.
-   */
   private Strategy strategy;
-
   private ArrayList<Integer> playerInputList;
   private Choice choice;
 
